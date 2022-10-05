@@ -1,0 +1,15 @@
+/Users/nathan/Documents/GitHub/projet_applications/bin/Debug/net6.0/projet_applications
+/Users/nathan/Documents/GitHub/projet_applications/bin/Debug/net6.0/projet_applications.deps.json
+/Users/nathan/Documents/GitHub/projet_applications/bin/Debug/net6.0/projet_applications.runtimeconfig.json
+/Users/nathan/Documents/GitHub/projet_applications/bin/Debug/net6.0/projet_applications.dll
+/Users/nathan/Documents/GitHub/projet_applications/bin/Debug/net6.0/projet_applications.pdb
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.csproj.AssemblyReference.cache
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.AssemblyInfoInputs.cache
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.AssemblyInfo.cs
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.csproj.CoreCompileInputs.cache
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.dll
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/refint/projet_applications.dll
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.pdb
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.genruntimeconfig.cache
+/Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/ref/projet_applications.dll
