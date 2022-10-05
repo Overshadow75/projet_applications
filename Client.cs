@@ -4,7 +4,7 @@ namespace ProjetApplication
 {
     class Client : Person
     {
-        public string phone = "";
-        public DateTime first_order;
+        private string phone = "";
+        private DateTime first_order;
     }
 }

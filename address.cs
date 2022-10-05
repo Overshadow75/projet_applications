@@ -4,10 +4,10 @@ namespace ProjetApplication
 {
     class Address
     {
-        public int number = 0;
-        public string streetName = "";
-        public string city = "";
-        public string zipCode = "";
-        public string country = "";
+        private int number = 0;
+        private string streetName = "";
+        private string city = "";
+        private string zipCode = "";
+        private string country = "";
     }
 }
