@@ -7,6 +7,6 @@ namespace ProjetApplication
         public int personID = 0;
         public string name = "";
         public string surname = "";
-        public int metierID;
+        public int metierID = 0;
     }
 }
