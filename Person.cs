@@ -4,7 +4,7 @@ namespace ProjetApplication
 {
     class Person
     {
-        public int personID;
+        public int personID = 0;
         public string name = "";
         public string surname = "";
         public int metierID;
