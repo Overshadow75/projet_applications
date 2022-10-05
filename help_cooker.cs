@@ -2,6 +2,6 @@ using System;
 
 namespace ProjetApplication
 {
-    class help_cooker
+    class Help_cooker
     { }
 }

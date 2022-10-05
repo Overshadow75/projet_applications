@@ -2,7 +2,7 @@ using System;
 
 namespace ProjetApplication
 {
-    class chef 
+    class Chef 
     {
     }
 }

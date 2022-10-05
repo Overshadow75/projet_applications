@@ -2,7 +2,7 @@ using System;
 
 namespace ProjetApplication
 {
-    class delivery_man 
+    class Delivery_man 
     {
     }
 }

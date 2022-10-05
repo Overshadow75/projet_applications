@@ -2,7 +2,7 @@ using System;
 
 namespace ProjetApplication
 {
-    class pizzeria 
+    class Pizzeria 
     {
         private string companyName = "O'pizza";
         private int nbEmployees = 0;
