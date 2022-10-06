@@ -2,10 +2,14 @@ using System;
 
 namespace ProjetApplication
 {
-    class Help_cooker
+    class Help_cooker : Person
     { 
         // liste de commande
         private List<Order> command_list = new List<Order>();
+
+        // constructor
+        public Help_cooker(int personID, string name, string surname, int metierID) : base(personID, name, surname, metierID) 
+        {}
         public void isFirstTimeOrder(Client c, Pizzeria p ) {
             Console.WriteLine("is it the first time you order? (y/n)");
 
@@ -46,6 +50,5 @@ namespace ProjetApplication
             // mettre la commande dans la liste de commande
             command_list.Add(order);
         }
-
     }
 }

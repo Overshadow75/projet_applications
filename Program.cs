@@ -29,10 +29,10 @@ namespace ProjetApplication
             // TEST RAPIDE
             Pizzeria pizzeria = new Pizzeria();
             Client c = new Client(1, "John", "Doe", 1, "1234567890", DateTime.Now, 1, "rue de la paix", "Paris", "75000", "France");
-            Help_cooker h1 = new Help_cooker();
+            // Help_cooker h1 = new Help_cooker();
             pizzeria.addClient(c);
 
-            h1.isFirstTimeOrder(c, pizzeria);
+            // h1.isFirstTimeOrder(c, pizzeria);
 
         }
 
