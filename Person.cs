@@ -16,9 +16,10 @@ namespace ProjetApplication
             this.surname = surname;
             this.metierID = metierID;
         }
-        public int Name {
-            get => personID;
-            set => personID = value;
+        
+        public string Name {
+            get => name;
+            set => name = value;
         }
     }
 }

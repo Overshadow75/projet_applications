@@ -9,5 +9,10 @@ namespace ProjetApplication
         private string city = "";
         private string zipCode = "";
         private string country = "";
+
+        // print address
+        public void printAddress(){
+            Console.WriteLine("Address : " + this.number + " " + this.streetName + " " + this.city + " " + this.zipCode + " " + this.country);
+        }
     }
 }
