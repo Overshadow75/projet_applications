@@ -2,11 +2,23 @@ using System;
 
 namespace ProjetApplication
 {
-    class Person
+    abstract class  Person
     {
-        private int personID = 0;
-        private string name = "";
-        private string surname = "";
-        private int metierID = 0;
+        protected int personID = 0;
+        protected string name = "";
+        protected string surname = "";
+        protected int metierID = 0;
+
+        // constructor
+        public Person(int personID, string name, string surname, int metierID) {
+            this.personID = personID;
+            this.name = name;
+            this.surname = surname;
+            this.metierID = metierID;
+        }
+        public int Name {
+            get => personID;
+            set => personID = value;
+        }
     }
 }
