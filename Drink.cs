@@ -8,13 +8,16 @@ namespace ProjetApplication
         private float volume;
         private float price;
         
-        public void enterDrink() {
+        public Drink() {
             Console.WriteLine("Enter the drink's informations");
 
             Console.WriteLine("Which drink do you want : ");
             Console.WriteLine("1 for Coca-Cola | 1$, 2 for orange juice | 2$, 3 for apple juice | 3$");
             int drink_choice = Convert.ToInt32(Console.ReadLine());
             switch(drink_choice) {
+                case 0:
+                    Console.WriteLine("No drink");
+                    break;
                 case 1:
                     drink = drink_type.coca;
                     break;
@@ -39,6 +42,11 @@ namespace ProjetApplication
                     price = 2;
                     break;
             }
+        }
+        
+        public float Price {
+            get { return price; }
+            set { price = value; }
         }
     }  
 }

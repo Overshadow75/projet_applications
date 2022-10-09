@@ -10,10 +10,10 @@ namespace ProjetApplication
 
 
         // Constructor
-        public Pizza() {
+        public Pizza(int i) {
 
-            Console.WriteLine("Which pizza do you want : ");
-            Console.WriteLine("1 for margherita | 5$ \n , 2 for tomate sauce | 7$, 3 for cheese sauce | 9$, 4 for vegetarian | 11$");
+            Console.WriteLine("Which pizza do you want : " + i);
+            Console.WriteLine("1 for margherita | 5$, 2 for tomate sauce | 7$, 3 for cheese sauce | 9$, 4 for vegetarian | 11$");
             int choice_type = Convert.ToInt32(Console.ReadLine());
             switch(choice_type) {
                 case 1:

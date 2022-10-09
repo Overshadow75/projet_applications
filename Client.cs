@@ -1,5 +1,5 @@
 using System;
-
+#pragma warning disable 8600, 8601
 namespace ProjetApplication
 {
     class Client : Person
@@ -30,11 +30,17 @@ namespace ProjetApplication
             set => phone = value;
         }
 
+        // getter address
+        public string Address {
+            get => number + " " + streetName + " " + city + " " + zipCode + " " + country;
+        }
         public void enterClient() {
             Console.WriteLine("Enter the client's informations");
 
             Console.WriteLine("Person ID : ");
-            int personID = Convert.ToInt32(Console.ReadLine());
+            //random personID
+            Random random = new Random();
+            int personID = random.Next(1, 1000);
 
             Console.WriteLine("Name : ");
             string name = Console.ReadLine();
@@ -49,9 +55,10 @@ namespace ProjetApplication
             Console.WriteLine("Phone : ");
             string phone = Console.ReadLine();
 
-            Console.WriteLine("First order : ");
+            // Console.WriteLine("First order : ");
             DateTime first_order = DateTime.Now;
 
+            Console.WriteLine("Enter address's informations: ");
             Console.WriteLine("Number : ");
             int number = Convert.ToInt32(Console.ReadLine());
 

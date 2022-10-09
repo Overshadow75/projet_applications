@@ -5,8 +5,8 @@ namespace ProjetApplication
     abstract class  Person
     {
         protected int personID = 0;
-        protected string name = "";
-        protected string surname = "";
+        protected string name;
+        protected string surname;
         protected int metierID = 0;
 
         // constructor
