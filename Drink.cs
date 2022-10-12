@@ -48,5 +48,11 @@ namespace ProjetApplication
             get { return price; }
             set { price = value; }
         }
+
+        // getter drink type
+        public drink_type drink_Type {
+            get { return drink; }
+            set { drink = value; }
+        }
     }  
 }

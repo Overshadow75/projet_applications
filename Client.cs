@@ -34,6 +34,10 @@ namespace ProjetApplication
         public string Address {
             get => number + " " + streetName + " " + city + " " + zipCode + " " + country;
         }
+        // getter first_order
+        public DateTime First_order {
+            get => first_order;
+        }
         public void enterClient() {
             Console.WriteLine("Enter the client's informations");
 

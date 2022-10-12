@@ -14,7 +14,7 @@ namespace ProjetApplication
         List<Drink> drink_list = new List<Drink>();
 
         // enterOrder
-        public Order(Client c) {
+        public Order(Help_cooker h, Client c) {
             this.c = c;
             Console.WriteLine("Enter the Order informations ");
             // generate orderID randomly
@@ -53,12 +53,26 @@ namespace ProjetApplication
 
             Console.WriteLine("State of the order : in progress");
             this.state = "in progress";     
+            int res = 0;
+            res = (int)computePrice();
+            Console.WriteLine("<======= ORDER VALIDATION =======>");   
+            displayOrder(h, c, res);   
+            // Console.WriteLine("OUOOOOUUU\n");
+            // int a = 0; 
+            // List<Pizza> b;
+            // (a, b) =  sendOrder();
+            // string pizza_list_string = "";
+            // foreach(Pizza p in b) {
+            //     pizza_list_string += p.pizza_Type + " ";
+            // }
+            // Console.WriteLine("OUIUUUUUUI" + (a,b));
+            // Console.WriteLine("OUIUUUUUUI" + pizza_list_string);
 
-            computePrice();      
+
         }
 
         // compute the price of the order
-        public void computePrice() {
+        public float computePrice() {
             float price = 0;
             foreach(Pizza pizza in pizza_list) {
                 price += pizza.Price;
@@ -66,11 +80,36 @@ namespace ProjetApplication
             foreach(Drink drink in drink_list) {
                 price += drink.Price;
             }
-
-            // display the price
-            Console.WriteLine("The price of the order is : " + price + "$");
+            return price;
         }
 
+        // display the order
+        public void displayOrder(Help_cooker h, Client c, float price) {
+            int i = 1;
+            Console.WriteLine("Help Cooker : " + h);
+            Console.WriteLine("Order ID : " + orderID);
+            Console.WriteLine("Order at : " + c.First_order);
+            Console.WriteLine("Client : " + c.Name  + " " + c.Surname);
+            Console.WriteLine("State of the order : " + state);
+            Console.WriteLine("Pizzas ordered : ");
+            foreach(Pizza p in pizza_list) {
+                Console.WriteLine("pizza "+ i + " : " + p.pizza_Type);
+                i++;
+            }
+            
+            if(drink_list.Count != 0) {
+                Console.WriteLine("Drinks ordered : ");
+                foreach(Drink d in drink_list) {
+                    Console.WriteLine("drink : " + d.drink_Type);
+                }
+            }
+           Console.WriteLine("price : " + price + "$"); 
+        }
+
+        // send the order to cuisinier
+        public Order sendOrder() {            
+            return this;
+        }
     }
 
 }

@@ -19,8 +19,12 @@ namespace ProjetApplication
 
         public void isFirstTimeOrder(Client c, Pizzeria p) {
             Console.WriteLine("is it the first time you order? (y/n)");
-            
             string choiceClient = Console.ReadLine(); //First time ? Client answer
+            while(choiceClient != "y" && choiceClient != "n") {
+                Console.WriteLine("Please answer y or n");
+                choiceClient = Console.ReadLine();
+            }
+            
             if (choiceClient == "n") { //Case - Not the first time
                 Console.WriteLine("Not the first time");
                 Console.WriteLine("Verification of the phone number");
@@ -37,7 +41,7 @@ namespace ProjetApplication
                     if (addressConfirmation == "y") { //Case - Good address
                         Console.WriteLine("Good Address");
                         Console.WriteLine("<======Take the order======>"); //Prise de commande
-                        Order order = new Order(c);
+                        Order order = new Order(this, c);
 
                     } else if (addressConfirmation == "n") { //Case - Bad address
                         Console.WriteLine("Enter the correct address :"); //Updating address
@@ -45,7 +49,7 @@ namespace ProjetApplication
                         Console.WriteLine("your address : " + c.Address);
   
                         Console.WriteLine("<======Take the order======>"); //Prise de commande
-                        Order order = new Order(c);
+                        Order order = new Order(this, c);
                     }
                 }
 
@@ -53,23 +57,8 @@ namespace ProjetApplication
                 Console.WriteLine("Collecting Client's information"); //First time OR Not in the list
                 c.enterClient();
                 Console.WriteLine("<======Take the order======>"); //Prise de commande
-                Order order = new Order(c);
+                Order order = new Order(this, c);
             }
         }
-
-
-        //Pizza command
-
-
-        //Drink command
-
-
-
-        //General command
-
-
-
-
-
     }
 }
