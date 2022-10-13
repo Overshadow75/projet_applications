@@ -9,9 +9,15 @@ namespace ProjetApplication
         private DateTime hours;
 
         // state de la commande : in progress, finish or cancel
-        private String state = "";
+        private order_type state = order_type.in_progress; // by default
         List<Pizza> pizza_list = new List<Pizza>();
         List<Drink> drink_list = new List<Drink>();
+
+        // getter list_pizza
+        public List<Pizza> Pizza_list {
+            get { return pizza_list; }
+            set { pizza_list = value; }
+        }
 
         // enterOrder
         public Order(Help_cooker h, Client c) {
@@ -52,23 +58,12 @@ namespace ProjetApplication
             this.hours = DateTime.Now;
 
             Console.WriteLine("State of the order : in progress");
-            this.state = "in progress";     
+             
             int res = 0;
             res = (int)computePrice();
             Console.WriteLine("<======= ORDER VALIDATION =======>");   
-            displayOrder(h, c, res);   
-            // Console.WriteLine("OUOOOOUUU\n");
-            // int a = 0; 
-            // List<Pizza> b;
-            // (a, b) =  sendOrder();
-            // string pizza_list_string = "";
-            // foreach(Pizza p in b) {
-            //     pizza_list_string += p.pizza_Type + " ";
-            // }
-            // Console.WriteLine("OUIUUUUUUI" + (a,b));
-            // Console.WriteLine("OUIUUUUUUI" + pizza_list_string);
-
-
+            displayOrder(h, c, res);  
+            
         }
 
         // compute the price of the order
@@ -107,9 +102,9 @@ namespace ProjetApplication
         }
 
         // send the order to cuisinier
-        public Order sendOrder() {            
-            return this;
-        }
+        // public Order sendOrder() {            
+        //     return this;
+        // }
     }
 
 }

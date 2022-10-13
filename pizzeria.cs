@@ -8,6 +8,9 @@ namespace ProjetApplication
         private int nbEmployees = 0;
         // list Client
         public List<Client> client_list = new List<Client>();
+
+        // list of order
+        public List<Order> order_list = new List<Order>();
         
         //constructor
         
@@ -16,6 +19,11 @@ namespace ProjetApplication
             set => companyName = value;
         }
 
+        // getter list_order
+        public List<Order> Order_list {
+            get { return order_list; }
+            set { order_list = value; }
+        }
         public void addClient(Client c) {
             this.client_list.Add(c);
         }
@@ -41,6 +49,23 @@ namespace ProjetApplication
                 c.printClient();
                 
             }
+        }
+
+        // add order to the list of order
+        public void addOrder(Order o) {
+            this.order_list.Add(o);
+        }
+
+        // print order list
+        public void printOrderList() {
+            if (order_list.Count == 0) {
+                Console.WriteLine("No order (fichier pizzeria)");
+            }
+            else {
+            foreach(Order o in order_list) {
+                Console.WriteLine(o);
+            }
+        }
         }
     }
 }
