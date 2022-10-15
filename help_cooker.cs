@@ -1,17 +1,21 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
+
 #pragma warning disable 8600
 namespace ProjetApplication
 {
     class Help_cooker : Person
     { 
         // Attributes
-        private List<Order> command_list = new List<Order>();
+        
+    
 
         // Constructor
         public Help_cooker(int personID, string name, string surname, int metierID) : base(personID, name, surname, metierID) 
         {}
 
-        public void isFirstTimeOrder(Client c, Pizzeria p) {
+        public async void isFirstTimeOrder(Client c, Pizzeria p) {
             Console.WriteLine("is it the first time you order? (y/n)");
             string choiceClient = Console.ReadLine(); //First time ? Client answer
             while(choiceClient != "y" && choiceClient != "n") {
@@ -38,7 +42,7 @@ namespace ProjetApplication
                         Console.WriteLine("Good Address");
                         Console.WriteLine("<======Take the order======>"); //Prise de commande
                         Order order = new Order(this, c);
-                        //add order to the list of order
+                        //add order to the list of order which is in the pizzeria
                         p.addOrder(order);
 
                     } else if (addressConfirmation == "n") { //Case - Bad address

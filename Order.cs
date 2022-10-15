@@ -19,6 +19,17 @@ namespace ProjetApplication
             set { pizza_list = value; }
         }
 
+        // getter orderID
+        public int OrderID {
+            get => orderID;
+            set => orderID = value;
+        }
+
+        // getter state
+        public order_type State {
+            get => state;
+            set => state = value;
+        }
         // enterOrder
         public Order(Help_cooker h, Client c) {
             this.c = c;
@@ -61,8 +72,8 @@ namespace ProjetApplication
              
             int res = 0;
             res = (int)computePrice();
-            Console.WriteLine("<======= ORDER VALIDATION =======>");   
-            displayOrder(h, c, res);  
+            //Console.WriteLine("<======= ORDER VALIDATION =======>");   
+            //displayOrder(h, c, res);  
             
         }
 

@@ -5,7 +5,7 @@ namespace ProjetApplication
     class Pizzeria 
     {
         private string companyName = "O'pizza";
-        private int nbEmployees = 0;
+
         // list Client
         public List<Client> client_list = new List<Client>();
 
@@ -38,11 +38,6 @@ namespace ProjetApplication
             return false;
         }
 
-        public int countEmployees()
-        {
-            return nbEmployees;
-        }
-
         // tostring client_list
         public void printClientList() {
             foreach(Client c in client_list) {
@@ -62,10 +57,15 @@ namespace ProjetApplication
                 Console.WriteLine("No order (fichier pizzeria)");
             }
             else {
-            foreach(Order o in order_list) {
-                Console.WriteLine(o);
+                foreach(Order o in order_list) {
+                    Console.WriteLine(o);
+                }
             }
         }
+
+        public Order returnOrder(){
+            return order_list[order_list.Count-1];
+           //return this.order_list[0];
         }
     }
 }

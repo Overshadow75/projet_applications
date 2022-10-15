@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ProjetApplication
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.Clear();
 
@@ -14,10 +16,25 @@ namespace ProjetApplication
             Chef c1 = new Chef(1, "Jean", "Dupont", 3);
             pizzeria.addClient(c);
 
-            h.isFirstTimeOrder(c, pizzeria);
-            //pizzeria.printOrderList(); // print order list from pizzeria
+            //Task take_client  = Task.Run(() => h.isFirstTimeOrder(c, pizzeria));
+            Task t1 = Task.Run(() => h.isFirstTimeOrder(c, pizzeria));
 
-            
+            //pizzeria.printOrderList(); // print order list from pizzeria
+            //Task t2 = Task.Run(() => c1.preparePizza(pizzeria.returnOrder()));            
+
+
+
+            //Console.WriteLine("Pizza is ready");
+
+
+            // Printing In progress each 3 seconds
+            int i = 0;
+            while(i < 10){
+                Console.WriteLine("Working");
+                Task t2 = Task.Run(() => c1.preparePizza(pizzeria.returnOrder()));            
+                Task.Delay(10000).Wait();
+                i++;				
+            }
         }
 
     }
