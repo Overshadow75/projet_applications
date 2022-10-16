@@ -18,6 +18,9 @@ namespace ProjetApplication
         public async void isFirstTimeOrder(Client c, Pizzeria p) {
             Console.WriteLine("is it the first time you order? (y/n)");
             string choiceClient = Console.ReadLine(); //First time ? Client answer
+            
+            choiceClient = choiceClient == "" ? "n" : choiceClient; // Development purpose
+
             while(choiceClient != "y" && choiceClient != "n") {
                 Console.WriteLine("Please answer y or n");
                 choiceClient = Console.ReadLine();
@@ -28,6 +31,8 @@ namespace ProjetApplication
                 Console.WriteLine("Verification of the phone number");
                 
                 string phone = Console.ReadLine();//Input of the phone number
+
+                phone = phone == "" ? "1234567890" : phone; // Development purpose
                 
                 if(p.isClientInList(phone)) { //Case - Client is in the list
                     Console.WriteLine("Client is in the list");
@@ -36,14 +41,19 @@ namespace ProjetApplication
                     Console.WriteLine("Is it your address ? (y/n)");
                     String addressConfirmation = Console.ReadLine(); //Answer of the Client
 
+                    addressConfirmation = addressConfirmation == "" ? "y" : addressConfirmation; // Development purpose
+
                     if (addressConfirmation == "y") { //Case - Good address
-
-
                         Console.WriteLine("Good Address");
                         Console.WriteLine("<======Take the order======>"); //Prise de commande
                         Order order = new Order(this, c);
                         //add order to the list of order which is in the pizzeria
                         p.addOrder(order);
+                        
+                        p.Chef.preparePizza(order);
+                        Task t = Task.Run(() => p.Help_cooker.isFirstTimeOrder(c, p)); //Task to run the method in parallel
+                        t.Wait();
+                        
 
                     } else if (addressConfirmation == "n") { //Case - Bad address
                         Console.WriteLine("Enter the correct address :"); //Updating address
@@ -60,9 +70,11 @@ namespace ProjetApplication
                 c.enterClient();
                 Console.WriteLine("<======Take the order======>"); //Prise de commande
                 Order order = new Order(this, c);
-                
+                p.addOrder(order);
+                p.Chef.preparePizza(order);
+                Task t = Task.Run(() => p.Help_cooker.isFirstTimeOrder(c, p)); //Task to run the method in parallel
+                t.Wait();
             }
         }
-
     }
 }

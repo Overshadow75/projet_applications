@@ -1,5 +1,6 @@
 using System;
-
+// #pragma warning disable 8618
+// #pragma warning disable 8625
 namespace ProjetApplication
 {
     class Pizzeria 
@@ -7,13 +8,28 @@ namespace ProjetApplication
         private string companyName = "O'pizza";
 
         // list Client
-        public List<Client> client_list = new List<Client>();
+        private List<Client> client_list = new List<Client>(); //TODO: Passer en private
 
         // list of order
-        public List<Order> order_list = new List<Order>();
+        private List<Order> order_list = new List<Order>(); //passer en Private
+
+        // Unique Help_Cooker nullable
+        private Help_cooker help_cooker = null;
+        public Help_cooker Help_cooker {
+            get { return help_cooker; }
+            set { help_cooker = value; }
+        }
+
+        // Chef
+        private Chef chef = null;
+        // setter chef
+        public Chef Chef {
+            get { return chef; }
+            set { chef = value; }
+        }
         
-        //constructor
-        
+
+        //constructor        
         public string CompanyName {
             get => companyName;
             set => companyName = value;
@@ -24,6 +40,7 @@ namespace ProjetApplication
             get { return order_list; }
             set { order_list = value; }
         }
+
         public void addClient(Client c) {
             this.client_list.Add(c);
         }

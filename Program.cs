@@ -11,31 +11,28 @@ namespace ProjetApplication
             Console.Clear();
 
             Pizzeria pizzeria = new Pizzeria();
+            //Soit ajouter la liste de client de l'extérieur soit la créer dans la pizzeria
             Client c = new Client(1, "John", "Doe", 1, "1234567890", DateTime.Now, 1, "rue de la paix", "Paris", "75000", "France");
-            Help_cooker h = new Help_cooker(009, "Pierre", "Chabrieux", 2);
-            Chef c1 = new Chef(1, "Jean", "Dupont", 3);
+            //Help_cooker h = new Help_cooker(009, "Pierre", "Chabrieux", 2);
+            //Chef c1 = new Chef(1, "Jean", "Dupont", 3);
             pizzeria.addClient(c);
 
-            //Task take_client  = Task.Run(() => h.isFirstTimeOrder(c, pizzeria));
-            Task t1 = Task.Run(() => h.isFirstTimeOrder(c, pizzeria));
+            //set h as Help_Cooker
+            pizzeria.Help_cooker = new Help_cooker(009, "Pierre", "Chabrieux", 2);
 
-            //pizzeria.printOrderList(); // print order list from pizzeria
-            //Task t2 = Task.Run(() => c1.preparePizza(pizzeria.returnOrder()));            
+            // set chef to pizzeria
+            pizzeria.Chef = new Chef(1, "Jean", "Dupont", 3);            
 
-
-
-            //Console.WriteLine("Pizza is ready");
-
-
-            // Printing In progress each 3 seconds
-            int i = 0;
-            while(i < 10){
-                Console.WriteLine("Working");
-                Task t2 = Task.Run(() => c1.preparePizza(pizzeria.returnOrder()));            
-                Task.Delay(10000).Wait();
-                i++;				
-            }
+            Task t1 = Task.Run(() => pizzeria.Help_cooker.isFirstTimeOrder(c, pizzeria));        
+            await t1;
+            //  while(!t1.IsCompleted){};
+            // if(t1.IsCompleted){
+            //     Task t2 = Task.Run(() => pizzeria.Chef.preparePizza(pizzeria.returnOrder()));            
+            //     // task 2 is async, wait for it to complete
+            
+            //     // restart t1
+            //     t1 = Task.Run(() => pizzeria.Help_cooker.isFirstTimeOrder(c, pizzeria));
+            // }
         }
-
     }
 }

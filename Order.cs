@@ -5,6 +5,7 @@ namespace ProjetApplication
     class Order
     {
         private Client c;
+        public static int nOrders = 0;
         private int orderID = 0;
         private DateTime hours;
 
@@ -34,10 +35,9 @@ namespace ProjetApplication
         public Order(Help_cooker h, Client c) {
             this.c = c;
             Console.WriteLine("Enter the Order informations ");
-            // generate orderID randomly
-            Random random = new Random();
-            int orderID = random.Next(1000, 9999);
-            this.orderID = orderID;
+            
+            nOrders ++;
+            this.orderID = nOrders;
             Console.WriteLine("Order ID : " + orderID);
            
             //Pizza choice
@@ -112,10 +112,6 @@ namespace ProjetApplication
            Console.WriteLine("price : " + price + "$"); 
         }
 
-        // send the order to cuisinier
-        // public Order sendOrder() {            
-        //     return this;
-        // }
     }
 
 }
