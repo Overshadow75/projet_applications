@@ -21,8 +21,8 @@ namespace ProjetApplication
                     string pizza_list_string = "";
                     Console.WriteLine("=====\n Preparing the pizza : " + p.pizza_Type);
                     pizza_list_string += "\t"+p.pizza_Type + "\n";
-                    Console.WriteLine("Pizza " + p.pizza_Type + " is ready"); 
                     await Task.Delay(3000);
+                    Console.WriteLine("Pizza " + p.pizza_Type + " is ready"); 
                 }
                 Console.WriteLine("=====\n All the pizza are ready (order " + o.OrderID+")");
                 o.State = order_type.in_delivery;
