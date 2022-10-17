@@ -41,9 +41,13 @@ namespace ProjetApplication
             Console.WriteLine("Order ID : " + orderID);
            
             //Pizza choice
+            int nb_pizzas;
             Console.WriteLine("How many pizzas do you want ?");
-            int nb_pizzas = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter a number [max 5]");
 
+            while (!int.TryParse(Console.ReadLine(), out nb_pizzas) || nb_pizzas > 5) {
+                Console.WriteLine("Enter a number [max 5]");
+            }
             Console.WriteLine("<======= PIZZA CHOICE =======>");
             for(int i = 0; i < nb_pizzas; i++) {
                 Pizza pizza = new Pizza(i+1);
@@ -52,7 +56,11 @@ namespace ProjetApplication
             
             //Drink choice
             Console.WriteLine("How many drinks do you want ?");
-            int nb_drinks = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter a number [max 5]");
+            int nb_drinks;
+            while (!int.TryParse(Console.ReadLine(), out nb_drinks) || nb_drinks > 5) {
+                Console.WriteLine("Enter a number [max 5]");
+            }
             Console.WriteLine("<======= DRINK CHOICE =======>");
             if(nb_drinks ==0) {
                 Console.WriteLine("No drink");
@@ -72,9 +80,6 @@ namespace ProjetApplication
              
             int res = 0;
             res = (int)computePrice();
-            //Console.WriteLine("<======= ORDER VALIDATION =======>");   
-            //displayOrder(h, c, res);  
-            
         }
 
         // compute the price of the order

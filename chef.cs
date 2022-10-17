@@ -9,7 +9,7 @@ namespace ProjetApplication
          public Chef(int personID, string name, string surname, int metierID) : base(personID, name, surname, metierID) {
         }
         // async function that prepare the pizza
-        public async Task preparePizza(Order o) {
+        public async Task preparePizza(Order o, Pizzeria pizzeria) {
             // check if the order is in_progress
             string pizza_list_string = "";
             if(o.State == order_type.in_progress){ 
@@ -39,6 +39,7 @@ namespace ProjetApplication
                 }
                 Console.WriteLine("=====\n All the pizza are ready (order " + o.OrderID+")");
                 o.State = order_type.in_delivery;
+                pizzeria.Delivery_Man.deliverOrder(o);
             }
             else {
                 Console.WriteLine("The order " + o.OrderID + " is not in progress");
