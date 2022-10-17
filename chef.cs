@@ -20,27 +20,24 @@ namespace ProjetApplication
                         if(p.pizza_Size == pizza_size.small) {
                             Console.WriteLine("Preparing the small " + p.pizza_Type + " pizza");
                             pizza_list_string += "\t"+p.pizza_Type + "\n";
-                            await Task.Delay(4000);
+                            await Task.Delay(7000);
                             Console.WriteLine("Pizza " + p.pizza_Type + " is ready\n");
                         }
                         else if(p.pizza_Size == pizza_size.medium) {
                             Console.WriteLine("Preparing the small " + p.pizza_Type + " pizza");
                             pizza_list_string += "\t"+p.pizza_Type + "\n";
-                            await Task.Delay(7000);
                             Console.WriteLine("Pizza " + p.pizza_Type + " is ready\n");
                         }
                         else if(p.pizza_Size == pizza_size.large) {
                             Console.WriteLine("Preparing the small " + p.pizza_Type + " pizza");
                             pizza_list_string += "\t"+p.pizza_Type + "\n";
-                            await Task.Delay(10000);
+                            await Task.Delay(13000);
                             Console.WriteLine("Pizza " + p.pizza_Type + " is ready\n");
                             
                         }
                 }
                 Console.WriteLine("=====\n All the pizza are ready (order " + o.OrderID+")");
                 o.State = order_type.in_delivery;
-                Console.WriteLine("------------------------------------\nIs it the first time you order? (y/n)\n------------------------------------");
-
             }
             else {
                 Console.WriteLine("The order " + o.OrderID + " is not in progress");
