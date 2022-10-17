@@ -11,7 +11,6 @@ namespace ProjetApplication
         // async function that prepare the pizza
         public async Task preparePizza(Order o) {
             // check if the order is in_progress
-            Console.WriteLine("ON EST DANS PREPRARE PIZZA");
            if(o.State == order_type.in_progress){ 
                 Console.WriteLine("Receiving the pizza of the order " + o.OrderID);
                 Console.WriteLine("Entre While");

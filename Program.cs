@@ -23,7 +23,7 @@ namespace ProjetApplication
             // set chef to pizzeria
             pizzeria.Chef = new Chef(1, "Jean", "Dupont", 3);            
 
-            Task t1 = Task.Run(() => pizzeria.Help_cooker.isFirstTimeOrder(c, pizzeria));        
+            Task t1 = Task.Run(() => pizzeria.Help_cooker.enterOrder(c, pizzeria));        
             await t1;
             //  while(!t1.IsCompleted){};
             // if(t1.IsCompleted){
@@ -31,7 +31,7 @@ namespace ProjetApplication
             //     // task 2 is async, wait for it to complete
             
             //     // restart t1
-            //     t1 = Task.Run(() => pizzeria.Help_cooker.isFirstTimeOrder(c, pizzeria));
+            //     t1 = Task.Run(() => pizzeria.Help_cooker.enterOrder(c, pizzeria));
             // }
         }
     }

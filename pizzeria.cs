@@ -28,7 +28,11 @@ namespace ProjetApplication
             set { chef = value; }
         }
         
-
+        private Delivery_man delivery = null;
+        public Delivery_man Delivery_Man {
+            get {return delivery;}
+            set { delivery = value;}
+        }
         //constructor        
         public string CompanyName {
             get => companyName;

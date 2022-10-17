@@ -52,9 +52,8 @@ namespace ProjetApplication
             Console.WriteLine("Surname : ");
             string surname = Console.ReadLine();
 
-            Console.WriteLine("1 for employee, 2 for client ");
-            Console.WriteLine("Metier ID : ");
-            int metierID = Convert.ToInt32(Console.ReadLine());
+            //1 for employee, 2 for client 
+            int metierID = 2;
 
             Console.WriteLine("Phone : ");
             string phone = Console.ReadLine();
