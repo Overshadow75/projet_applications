@@ -26,6 +26,7 @@ namespace ProjetApplication
                         else if(p.pizza_Size == pizza_size.medium) {
                             Console.WriteLine("Preparing the small " + p.pizza_Type + " pizza");
                             pizza_list_string += "\t"+p.pizza_Type + "\n";
+                            await Task.Delay(10000);
                             Console.WriteLine("Pizza " + p.pizza_Type + " is ready\n");
                         }
                         else if(p.pizza_Size == pizza_size.large) {
