@@ -46,11 +46,14 @@ namespace ProjetApplication
                     if (addressConfirmation == "y") { //Case - Good address
                         Console.WriteLine("Good Address");
 
-                        String readyToCommand = "n";
+                        String readyToCommand = "";
 
                         do{
-                            Console.WriteLine("-------------------------------\nAre you ready to command ? [y/n]\n-------------------------------");
-                            readyToCommand = Console.ReadLine();
+                            Console.WriteLine("--------------------------\nAre you ready to command ? \n--------------------------");
+                            while(readyToCommand != "y" && readyToCommand != "n") {
+                                Console.WriteLine("Enter [y/n]");
+                                readyToCommand = Console.ReadLine();
+                            }
                 
                             if (readyToCommand == "y") { //Case - Client is ready to command
                                 Console.WriteLine("<======Take the order======>"); //Prise de commande

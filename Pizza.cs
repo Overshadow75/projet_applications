@@ -12,9 +12,12 @@ namespace ProjetApplication
         // Constructor
         public Pizza(int i) {
 
-            Console.WriteLine("Which pizza do you want : " + i);
-            Console.WriteLine("1 for margherita | 5$, 2 for tomate sauce | 7$, 3 for cheese sauce | 9$, 4 for vegetarian | 11$");
-            int choice_type = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Which pizza do you want : ");
+            Console.WriteLine("--------------------\n1 margherita  [5€]\n2 tomato      [7€]\n3 cheese      [9€]\n4 vegetarian  [11€]\n--------------------");
+            int choice_type;
+            while (!int.TryParse(Console.ReadLine(), out choice_type) || choice_type > 4 || choice_type < 1) {
+                Console.WriteLine("Enter a number [1, 2, 3 or 4]");
+            }
             switch(choice_type) {
                 case 1:
                     this.type = pizza_type.margherita;
@@ -35,8 +38,11 @@ namespace ProjetApplication
             }
 
             Console.WriteLine("Which size : ");
-            Console.WriteLine("1 for small | +1$, 2 for medium | +2$, 3 for large | +3$");
-            int choice_size = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("-------------\n1 Small  [1€]\n2 Medium [2€]\n3 Large  [3€]\n-------------");
+            int choice_size;
+            while (!int.TryParse(Console.ReadLine(), out choice_size) || choice_size > 3 || choice_size < 1) {
+                Console.WriteLine("Enter a number [1, 2 or 3]");
+            }
             switch(choice_size) {
                 case 1:
                     this.size = pizza_size.small;

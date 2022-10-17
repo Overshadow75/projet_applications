@@ -39,7 +39,6 @@ namespace ProjetApplication
             get => first_order;
         }
         public void enterClient() {
-            Console.WriteLine("Enter the client's informations");
 
             Console.WriteLine("Person ID : ");
             //random personID
@@ -63,7 +62,10 @@ namespace ProjetApplication
 
             Console.WriteLine("Enter address's informations: ");
             Console.WriteLine("Number : ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            int number;
+            while (!int.TryParse(Console.ReadLine(), out number)) {
+                Console.WriteLine("Please enter a number");
+            }
 
             Console.WriteLine("Street name : ");
             string streetName = Console.ReadLine();

@@ -9,11 +9,12 @@ namespace ProjetApplication
         private float price;
         
         public Drink() {
-            Console.WriteLine("Enter the drink's informations");
-
             Console.WriteLine("Which drink do you want : ");
-            Console.WriteLine("1 for Coca-Cola | 1$, 2 for orange juice | 2$, 3 for apple juice | 3$");
-            int drink_choice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("--------------------\n1 Coca-Cola     [1€] \n2 Orange juice  [2€] \n3 Apple juice   [3€]\n--------------------");
+            int drink_choice;
+            while (!int.TryParse(Console.ReadLine(), out drink_choice) || drink_choice > 3 || drink_choice < 1) {
+                Console.WriteLine("Enter a number [1, 2 or 3]");
+            }
             switch(drink_choice) {
                 case 0:
                     Console.WriteLine("No drink");
@@ -29,9 +30,12 @@ namespace ProjetApplication
                     break;
             }
 
-            Console.WriteLine("In which volume ? : ");
-            Console.WriteLine("1 for 25cl | 1$, 2 for 33cl | 2$");
-            int choice_volume = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Volume : ");
+            Console.WriteLine("-------------\n1 25cL  [1€]\n2 33cL  [2€]\n-------------");
+            int choice_volume;
+            while (!int.TryParse(Console.ReadLine(), out choice_volume) || choice_volume > 2 || choice_volume < 1) {
+                Console.WriteLine("Enter a number [1 or 2]");
+            }
             switch(choice_volume) {
                 case 1:
                     volume = 25;

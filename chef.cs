@@ -14,7 +14,6 @@ namespace ProjetApplication
             string pizza_list_string = "";
             if(o.State == order_type.in_progress){ 
                     Console.WriteLine("Receiving the pizza of the order " + o.OrderID);
-                    Console.WriteLine("Entre While");
                 
                     foreach(Pizza p in o.Pizza_list) { // On parcours la liste de pizza de la commande et on les prepare
                         if(p.pizza_Size == pizza_size.small) {
@@ -37,7 +36,7 @@ namespace ProjetApplication
                             
                         }
                 }
-                Console.WriteLine("=====\n All the pizza are ready (order " + o.OrderID+")");
+                Console.WriteLine("------------------------------------\n Order "+o.OrderID +" - All the pizza are ready !\n------------------------------------");
                 o.State = order_type.in_delivery;
                 pizzeria.Delivery_Man.deliverOrder(o);
             }

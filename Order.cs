@@ -33,16 +33,14 @@ namespace ProjetApplication
         }
         // enterOrder
         public Order(Help_cooker h, Client c) {
-            this.c = c;
-            Console.WriteLine("Enter the Order informations ");
-            
+            this.c = c;            
             nOrders ++;
             this.orderID = nOrders;
-            Console.WriteLine("Order ID : " + orderID);
+            Console.WriteLine("------------\nOrder n°" + orderID+"\n------------");
            
             //Pizza choice
             int nb_pizzas;
-            Console.WriteLine("How many pizzas do you want ?");
+            Console.WriteLine("How many pizzas ?");
             Console.WriteLine("Enter a number [max 5]");
 
             while (!int.TryParse(Console.ReadLine(), out nb_pizzas) || nb_pizzas > 5) {
@@ -55,7 +53,7 @@ namespace ProjetApplication
             }
             
             //Drink choice
-            Console.WriteLine("How many drinks do you want ?");
+            Console.WriteLine("How many drinks ?");
             Console.WriteLine("Enter a number [max 5]");
             int nb_drinks;
             while (!int.TryParse(Console.ReadLine(), out nb_drinks) || nb_drinks > 5) {
@@ -73,7 +71,7 @@ namespace ProjetApplication
             }
 
             //Validation
-            Console.WriteLine("Order at : " + DateTime.Now);
+            Console.WriteLine("---------------------------------\nOrder take at " + DateTime.Now + "\n---------------------------------");
             this.hours = DateTime.Now;
 
             Console.WriteLine("State of the order : in progress");
