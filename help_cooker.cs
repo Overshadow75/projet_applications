@@ -16,7 +16,7 @@ namespace ProjetApplication
         {}
 
         public async void enterOrder(Client c, Pizzeria p) {
-            Console.WriteLine("is it the first time you order? (y/n)");
+            Console.WriteLine("------------------------------------\nIs it the first time you order? (y/n)\n------------------------------------");
             string choiceClient = Console.ReadLine(); //First time ? Client answer
             
             choiceClient = choiceClient == "" ? "n" : choiceClient; // Development purpose
@@ -38,7 +38,7 @@ namespace ProjetApplication
                     Console.WriteLine("Client is in the list");
                     
                     c.printAddress();
-                    Console.WriteLine("Is it your address ? (y/n)");
+                    Console.WriteLine("-------------------------\nIs it your address ? [y/n]\n-------------------------");
                     String addressConfirmation = Console.ReadLine(); //Answer of the Client
 
                     addressConfirmation = addressConfirmation == "" ? "y" : addressConfirmation; // Development purpose
@@ -49,7 +49,7 @@ namespace ProjetApplication
                         String readyToCommand = "n";
 
                         do{
-                            Console.WriteLine("Are you ready to command ? [y/n]");
+                            Console.WriteLine("-------------------------------\nAre you ready to command ? [y/n]\n-------------------------------");
                             readyToCommand = Console.ReadLine();
                 
                             if (readyToCommand == "y") { //Case - Client is ready to command
