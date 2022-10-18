@@ -65,7 +65,8 @@ namespace ProjetApplication
                                 //add order to the list of order which is in the pizzeria
                                 p.addOrder(order);
                                 
-                                p.Chef.preparePizza(order, p);
+                                // Task.Run(() =>
+                                p.Chef.preparePizzas(order, p);
                                 
                                 //Take another client's order 
                                 Task t2 = Task.Run(() => p.Help_cooker.enterOrder(p)); 
@@ -94,7 +95,7 @@ namespace ProjetApplication
                 Console.WriteLine("<======Take the order======>"); //Prise de commande
                 Order order = new Order(this, c0);
                 p.addOrder(order);
-                p.Chef.preparePizza(order, p);
+                p.Chef.preparePizzas(order, p);
                 Task t = Task.Run(() => p.Help_cooker.enterOrder(p)); //Task to run the method in parallel
                 t.Wait();
             }
