@@ -46,15 +46,15 @@ namespace ProjetApplication
             switch(choice_size) {
                 case 1:
                     this.size = pizza_size.small;
-                    this.price = 5 + 1;
+                    this.price = price + 1;
                     break;
                 case 2:
                     this.size = pizza_size.medium;
-                    this.price = 7 + 2;
+                    this.price = price + 2;
                     break;
                 case 3:
                     this.size = pizza_size.large;
-                    this.price = 9 + 3;
+                    this.price = price + 3;
                     break;
             }
 

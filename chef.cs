@@ -37,9 +37,7 @@ namespace ProjetApplication
                         }
                 }
                 Console.WriteLine("------------------------------------\n Order "+o.OrderID +" - All the pizza are ready !\n------------------------------------");
-                Console.WriteLine("avant changement : " + o.State);
                 o.State = order_type.in_delivery;
-                Console.WriteLine("après changement : " + o.State);
                 pizzeria.Delivery_Man.deliverOrder(o);
             }
             else {

@@ -86,6 +86,7 @@ namespace ProjetApplication
             foreach(Pizza pizza in pizza_list) {
                 price += pizza.Price;
             }
+          
             foreach(Drink drink in drink_list) {
                 price += drink.Price;
             }
