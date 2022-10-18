@@ -8,7 +8,7 @@ namespace ProjetApplication
         protected string name;
         protected string surname;
         protected int metierID = 0;
-
+        
         // constructor
         public Person(int personID, string name, string surname, int metierID) {
             this.personID = personID;
@@ -17,6 +17,7 @@ namespace ProjetApplication
             this.metierID = metierID;
         }
         
+        public Person(){}
         public string Name {
             get => name;
             set => name = value;
@@ -24,6 +25,12 @@ namespace ProjetApplication
         public string Surname {
             get => surname;
             set => surname = value;
+        }
+        
+        // getter personID
+        public int PersonID {
+            get => personID;
+            set => personID = value;
         }
     }
 }

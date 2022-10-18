@@ -58,7 +58,14 @@ namespace ProjetApplication
             }
             return false;
         }
-
+        public Client getClient(string phone) {
+            foreach(Client c in this.client_list) {
+                if(c.Phone == phone) {
+                    return c;
+                }
+            }
+            return null;
+        }
         // tostring client_list
         public void printClientList() {
             foreach(Client c in client_list) {
@@ -87,6 +94,17 @@ namespace ProjetApplication
         public Order returnOrder(){
             return order_list[order_list.Count-1];
            //return this.order_list[0];
+        }
+
+
+        //Use the information of an designated Client
+        public string searchClient(int ID_client){
+            foreach(Client c in this.client_list){
+                if(c.PersonID == ID_client){
+                    return c.AllInfo;
+                }
+            }
+            return "Client not found";
         }
     }
 }

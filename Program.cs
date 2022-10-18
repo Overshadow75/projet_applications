@@ -24,7 +24,7 @@ namespace ProjetApplication
             // set chef to pizzeria
             pizzeria.Chef = new Chef(1, "Jean", "Dupont", 3);            
 
-            Task t1 = Task.Run(() => pizzeria.Help_cooker.enterOrder(c, pizzeria));        
+            Task t1 = Task.Run(() => pizzeria.Help_cooker.enterOrder(pizzeria));        
             await t1;
         }
     }

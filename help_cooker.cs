@@ -15,7 +15,7 @@ namespace ProjetApplication
         public Help_cooker(int personID, string name, string surname, int metierID) : base(personID, name, surname, metierID) 
         {}
 
-        public async void enterOrder(Client c, Pizzeria p) {
+        public async void enterOrder(Pizzeria p) {
             Console.WriteLine("------------------------------------\nIs it the first time you order? (y/n)\n------------------------------------");
             string choiceClient = Console.ReadLine(); //First time ? Client answer
             
@@ -36,9 +36,13 @@ namespace ProjetApplication
                 
                 if(p.isClientInList(phone)) { //Case - Client is in the list
                     Console.WriteLine("Client is in the list");
-                    
-                    c.printAddress();
+
+                    Client c = p.getClient(phone);                 
+
                     Console.WriteLine("-------------------------\nIs it your address ? [y/n]\n-------------------------");
+                    // TODO: fonction qui cherche les clients avec le meme numero de telephone et adresse
+                    
+
                     String addressConfirmation = Console.ReadLine(); //Answer of the Client
 
                     addressConfirmation = addressConfirmation == "" ? "y" : addressConfirmation; // Development purpose
@@ -64,19 +68,19 @@ namespace ProjetApplication
                                 p.Chef.preparePizza(order, p);
                                 
                                 //Take another client's order 
-                                Task t2 = Task.Run(() => p.Help_cooker.enterOrder(c, p)); 
+                                Task t2 = Task.Run(() => p.Help_cooker.enterOrder(p)); 
                                 t2.Wait();
                             }
-                            Task t1 = Task.Run(() => p.Help_cooker.enterOrder(c, p)); 
+                            Task t1 = Task.Run(() => p.Help_cooker.enterOrder(p)); 
                             t1.Wait();
                             
                             await Task.Delay(6000);
                         } while(readyToCommand != "n");
 
                     } else if (addressConfirmation == "n") { //Case - Bad address
-                        Console.WriteLine("Enter the correct address :"); //Updating address
-                        c.enterAddress();
-                        Console.WriteLine("your address : " + c.Address);
+                        Console.WriteLine("Collecting Client's information"); //First time OR Not in the list
+                        Client cO = new Client();
+                        p.addClient(cO);
   
                         Console.WriteLine("<======Take the order======>"); //Prise de commande
                         Order order = new Order(this, c);
@@ -85,12 +89,13 @@ namespace ProjetApplication
 
             } else if(choiceClient == "y")  { //Case - The first time OR Not in the list
                 Console.WriteLine("Collecting Client's information"); //First time OR Not in the list
-                c.enterClient();
+                Client c0 = new Client();
+                p.addClient(c0);
                 Console.WriteLine("<======Take the order======>"); //Prise de commande
-                Order order = new Order(this, c);
+                Order order = new Order(this, c0);
                 p.addOrder(order);
                 p.Chef.preparePizza(order, p);
-                Task t = Task.Run(() => p.Help_cooker.enterOrder(c, p)); //Task to run the method in parallel
+                Task t = Task.Run(() => p.Help_cooker.enterOrder(p)); //Task to run the method in parallel
                 t.Wait();
             }
         }

@@ -14,6 +14,7 @@ namespace ProjetApplication
         private string zipCode = "";
         private string country = "";
 
+        public static int countPersonID = 0;
         // constructor
         public Client(int personID, string name, string surname, int metierID,string phone, DateTime first_order, int number, string streetName, string city, string zipCode, string country) :base(personID, name, surname, metierID){ 
             this.phone = phone;
@@ -24,40 +25,25 @@ namespace ProjetApplication
             this.zipCode = zipCode;
             this.country = country;
         }
-        
-        public string Phone {
-            get => phone;
-            set => phone = value;
-        }
-
-        // getter address
-        public string Address {
-            get => number + " " + streetName + " " + city + " " + zipCode + " " + country;
-        }
-        // getter first_order
-        public DateTime First_order {
-            get => first_order;
-        }
-        public void enterClient() {
-
-            Console.WriteLine("Person ID : ");
-            //random personID
-            Random random = new Random();
-            int personID = random.Next(1, 1000);
+         public Client() {
+            this.personID = countPersonID++;
+            Console.WriteLine("Person ID : " + personID);
 
             Console.WriteLine("Name : ");
             string name = Console.ReadLine();
+            this.name = name;
 
             Console.WriteLine("Surname : ");
             string surname = Console.ReadLine();
+            this.surname = surname;
 
             //1 for employee, 2 for client 
-            int metierID = 2;
+            this.metierID = 2;
 
             Console.WriteLine("Phone : ");
             string phone = Console.ReadLine();
+            this.phone = phone;
 
-            // Console.WriteLine("First order : ");
             DateTime first_order = DateTime.Now;
 
             Console.WriteLine("Enter address's informations: ");
@@ -66,25 +52,26 @@ namespace ProjetApplication
             while (!int.TryParse(Console.ReadLine(), out number)) {
                 Console.WriteLine("Please enter a number");
             }
+            this.number = number;
 
             Console.WriteLine("Street name : ");
             string streetName = Console.ReadLine();
+            this.streetName = streetName;
 
             Console.WriteLine("City : ");
             string city = Console.ReadLine();
+            this.city = city;
 
             Console.WriteLine("Zip code : ");
             string zipCode = Console.ReadLine();
+            this.zipCode = zipCode;
 
             Console.WriteLine("Country : ");
             string country = Console.ReadLine();
-
-            Client c = new Client(personID, name, surname, metierID, phone, first_order, number, streetName, city, zipCode, country);
-            Pizzeria pizzeria = new Pizzeria();
-            pizzeria.addClient(c);
+            this.country = country;
         }
 
-        public void enterAddress() { // in case of modification of the adress
+        public void editAddress() { // in case of modification of the adress
             Console.WriteLine("Enter your address");
             Console.WriteLine("Street : ");
             this.streetName = Console.ReadLine();
@@ -98,6 +85,24 @@ namespace ProjetApplication
             Console.WriteLine("Country : ");
             this.country = Console.ReadLine();
             
+        }
+        public string Phone {
+            get => phone;
+            set => phone = value;
+        }
+
+        // getter address
+        public string Address {
+            get => number + " " + streetName + " " + city + " " + zipCode + " " + country;
+        }
+        // getter first_order
+        public DateTime First_order {
+            get => first_order;
+        }
+       
+       //global getter for all the informations
+        public string AllInfo {
+            get => "Name : " + name + " Surname : " + surname + " Phone : " + phone + " First order : " + first_order + " Address : " + number + " " + streetName + " " + city + " " + zipCode + " " + country;
         }
 
         public void printClient(){
