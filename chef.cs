@@ -38,7 +38,7 @@ namespace ProjetApplication
                 }
                 Console.WriteLine("------------------------------------\n Order "+o.OrderID +" - All the pizza are ready !\n------------------------------------");
                 o.State = order_type.in_delivery;
-                pizzeria.Delivery_Man.deliverOrder(o);
+                pizzeria.Delivery_Man.deliverOrder(o, pizzeria);
             }
             else {
                 Console.WriteLine("The order " + o.OrderID + " is not in progress");

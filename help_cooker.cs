@@ -99,5 +99,12 @@ namespace ProjetApplication
                 t.Wait();
             }
         }
+
+        public void endOrder(Order o) {
+            Console.WriteLine("Money received : " + o.computePrice() + "€");
+
+            o.State = order_type.finished;
+            Console.WriteLine("Order " + o.OrderID + " finished");
+        }
     }
 }
