@@ -22,7 +22,10 @@ namespace ProjetApplication
             pizzeria.Help_cooker = new Help_cooker(009, "Pierre", "Chabrier", 2);
 
             // set chef to pizzeria
-            pizzeria.Chef = new Chef(1, "Jean", "Dupont", 3);            
+            pizzeria.Chef = new Chef(1, "Jean", "Dupont", 3); 
+
+            //set delivery_man to pizzeria
+            pizzeria.Delivery_Man = new Delivery_man();            
 
             Task t1 = Task.Run(() => pizzeria.Help_cooker.enterOrder(pizzeria));        
             await t1;

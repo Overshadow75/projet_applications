@@ -97,6 +97,7 @@ namespace ProjetApplication
         }
 
 
+        //EN BAS A RETIRER 
         //Use the information of an designated Client
         public string searchClient(int ID_client){
             foreach(Client c in this.client_list){
