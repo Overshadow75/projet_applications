@@ -11,13 +11,13 @@ namespace ProjetApplication
             Console.Clear();
 
             Pizzeria pizzeria = new Pizzeria();
-            //Soit ajouter la liste de client de l'extérieur soit la créer dans la pizzeria
+            
             Client c = new Client(1, "John", "Doe", 1, "1234567890", DateTime.Now, 1, "rue de la paix", "Paris", "75000", "France");
             
             pizzeria.addClient(c);
 
             //set h as Help_Cooker
-            pizzeria.Help_cooker = new Help_cooker(009, "Pierre", "Chabrier", 2);
+            pizzeria.Help_cooker = new Help_cooker(9, "Pierre", "Chabrier", 2);
 
             // set chef to pizzeria
             pizzeria.Chef = new Chef(1, "Jean", "Dupont", 3); 

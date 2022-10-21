@@ -94,16 +94,13 @@ namespace ProjetApplication
         }
 
         // display the order
-        public void displayOrder(Help_cooker h, Client c, float price) {
+        public void displayOrder() {
             int i = 1;
-            Console.WriteLine("Help Cooker : " + h);
             Console.WriteLine("Order ID : " + orderID);
-            Console.WriteLine("Order at : " + c.First_order);
-            Console.WriteLine("Client : " + c.Name  + " " + c.Surname);
             Console.WriteLine("State of the order : " + state);
             Console.WriteLine("Pizzas ordered : ");
             foreach(Pizza p in pizza_list) {
-                Console.WriteLine("pizza "+ i + " : " + p.pizza_Type);
+                Console.WriteLine("\tpizza "+ i + " : " + p.pizza_Type);
                 i++;
             }
             
@@ -113,7 +110,7 @@ namespace ProjetApplication
                     Console.WriteLine("drink : " + d.drink_Type);
                 }
             }
-           Console.WriteLine("price : " + price + "€"); 
+
         }
 
     }
