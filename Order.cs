@@ -9,10 +9,10 @@ namespace ProjetApplication
         private int orderID = 0;
         private DateTime hours;
 
-        // state de la commande : in progress, finish or cancel
-        private order_type state = order_type.in_progress; // by default
-        List<Pizza> pizza_list = new List<Pizza>();
-        List<Drink> drink_list = new List<Drink>();
+        // order state (in_progress, in_delivery, delivered, finished, canceled)
+        private order_type state = order_type.in_progress; // by default the order is in progress 
+        List<Pizza> pizza_list = new List<Pizza>(); // list of pizza
+        List<Drink> drink_list = new List<Drink>(); // list of drink
 
         // getter list_pizza
         public List<Pizza> Pizza_list {
@@ -31,8 +31,8 @@ namespace ProjetApplication
             get => state;
             set => state = value;
         }
-        // enterOrder
-        public Order(Help_cooker h, Client c) {
+        // enterOrder using the constructor
+        public Order(Help_cooker h, Client c) { 
             this.c = c;            
             nOrders ++;
             this.orderID = nOrders;
@@ -113,7 +113,7 @@ namespace ProjetApplication
                     Console.WriteLine("drink : " + d.drink_Type);
                 }
             }
-           Console.WriteLine("price : " + price + "$"); 
+           Console.WriteLine("price : " + price + "€"); 
         }
 
     }

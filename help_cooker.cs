@@ -2,24 +2,20 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-#pragma warning disable 8600
+#pragma warning disable 8600, 8604
 namespace ProjetApplication
 {
     class Help_cooker : Person
     { 
-        // Attributes
-        
-    
-
         // Constructor
         public Help_cooker(int personID, string name, string surname, int metierID) : base(personID, name, surname, metierID) 
         {}
 
-        public async void enterOrder(Pizzeria p) {
+        public async void enterOrder(Pizzeria p) { // enter order
             Console.WriteLine("------------------------------------\nIs it the first time you order? (y/n)\n------------------------------------");
             string choiceClient = Console.ReadLine(); //First time ? Client answer
             
-            choiceClient = choiceClient == "" ? "n" : choiceClient; // Development purpose
+            choiceClient = choiceClient == "" ? "n" : choiceClient; // Simplify the input. Just press enter to say no.
 
             while(choiceClient != "y" && choiceClient != "n") {
                 Console.WriteLine("Please answer y or n");
@@ -102,7 +98,7 @@ namespace ProjetApplication
         }
 
         public void endOrder(Order o) {
-            Console.WriteLine("Money received : " + o.computePrice() + "€");
+            Console.WriteLine("Money cashed : " + o.computePrice() + "€");
 
             o.State = order_type.finished;
             Console.WriteLine("Order " + o.OrderID + " finished");

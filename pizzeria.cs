@@ -1,6 +1,7 @@
 using System;
-// #pragma warning disable 8618
-// #pragma warning disable 8625
+#pragma warning disable 8618
+#pragma warning disable 8625
+#pragma warning disable 8603
 namespace ProjetApplication
 {
     class Pizzeria 
@@ -8,12 +9,11 @@ namespace ProjetApplication
         private string companyName = "O'pizza";
 
         // list Client
-        private List<Client> client_list = new List<Client>(); //TODO: Passer en private
+        private List<Client> client_list = new List<Client>();
 
         // list of order
-        private List<Order> order_list = new List<Order>(); //passer en Private
-
-        // Unique Help_Cooker nullable
+        private List<Order> order_list = new List<Order>(); 
+        /*In this file we implement help_cooker , chef, and delivery_man here to simplify their call in program.cs*/
         private Help_cooker help_cooker = null;
         public Help_cooker Help_cooker {
             get { return help_cooker; }
@@ -48,6 +48,7 @@ namespace ProjetApplication
         public void addClient(Client c) {
             this.client_list.Add(c);
         }
+        
         // verifier si le phone client est dans la liste des clients
         public bool isClientInList(string phone) {
             foreach(Client c in this.client_list) {
@@ -91,22 +92,6 @@ namespace ProjetApplication
             }
         }
 
-        public Order returnOrder(){
-            return order_list[order_list.Count-1];
-           //return this.order_list[0];
-        }
-
-
-        //EN BAS A RETIRER 
-        //Use the information of an designated Client
-        public string searchClient(int ID_client){
-            foreach(Client c in this.client_list){
-                if(c.PersonID == ID_client){
-                    return c.AllInfo;
-                }
-            }
-            return "Client not found";
-        }
     }
 }
 

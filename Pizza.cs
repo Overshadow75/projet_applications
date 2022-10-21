@@ -57,10 +57,7 @@ namespace ProjetApplication
                     this.price = price + 3;
                     break;
             }
-
-
         }
-
 
         // getter on every attributes
         public pizza_size pizza_Size {
@@ -78,6 +75,10 @@ namespace ProjetApplication
             set => price = value;
         }
 
+        // function that prepare the pizza
+        public void preparePizza() {
+            Console.WriteLine("Preparing the pizza " + this.pizza_Type);
+        }
 
     }
 }
