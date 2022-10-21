@@ -97,8 +97,10 @@ namespace ProjetApplication
             }
         }
 
-        public void endOrder(Order o) {
+        public void endOrder(Order o, Pizzeria p) { // end order
+            p.addToTreasury(o.computePrice());
             Console.WriteLine("Money cashed : " + o.computePrice() + "€");
+            Console.WriteLine("Treasury : " + p.Treasury + "€");
 
             o.State = order_type.finished;
             Console.WriteLine("Order " + o.OrderID + " finished");

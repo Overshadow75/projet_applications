@@ -7,7 +7,7 @@ namespace ProjetApplication
     class Pizzeria 
     {
         private string companyName = "O'pizza";
-
+        private float treasury = 0;
         // list Client
         private List<Client> client_list = new List<Client>();
 
@@ -49,11 +49,16 @@ namespace ProjetApplication
             this.client_list.Add(c);
         }
         
-        // verifier si le phone client est dans la liste des clients
+        // getter treasury
+        public float Treasury {
+            get => treasury;
+            set => treasury = value;
+        }
+        // check the client list to see if the client is already in the list
         public bool isClientInList(string phone) {
             foreach(Client c in this.client_list) {
                 if(c.Phone == phone) {
-                    Console.WriteLine("find " + c.Name);
+                    Console.WriteLine("find " + c.Name + c.Surname);
                     return true;
                 }
             }
@@ -92,6 +97,13 @@ namespace ProjetApplication
             }
         }
 
+        public void addToTreasury(float price) {
+            this.treasury += price;
+        }
+
+        public void printTreasury() {
+            Console.WriteLine("Treasury : " + treasury);
+        }
     }
 }
 

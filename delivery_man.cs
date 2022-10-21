@@ -20,7 +20,7 @@ namespace ProjetApplication
                     Console.WriteLine("The order " + o.OrderID + " is delivered");
                     Console.WriteLine("Deliver received : " + o.computePrice() + "€");
                     await Task.Delay(5000);
-                    pizzeria.Help_cooker.endOrder(o);
+                    pizzeria.Help_cooker.endOrder(o, pizzeria);
                 }
                 // TODO mettre en parametre la liste des commandes et les livrer
             }
