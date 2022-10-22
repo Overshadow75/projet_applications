@@ -6,14 +6,15 @@ namespace ProjetApplication
 {
     class Pizzeria 
     {
+        // ATTRIBUTES
         private string companyName = "O'pizza";
         private float treasury = 0;
-        // list Client
+        
         private List<Client> client_list = new List<Client>();
-
-        // list of order
         private List<Order> order_list = new List<Order>(); 
+        
         /*In this file we implement help_cooker , chef, and delivery_man here to simplify their call in program.cs*/
+        // Help_cooker
         private Help_cooker help_cooker = null;
         public Help_cooker Help_cooker {
             get { return help_cooker; }
@@ -22,24 +23,24 @@ namespace ProjetApplication
 
         // Chef
         private Chef chef = null;
-        // setter chef
         public Chef Chef {
             get { return chef; }
             set { chef = value; }
         }
         
+        // Delivery man
         private Delivery_man delivery = null;
         public Delivery_man Delivery_Man {
             get {return delivery;}
             set { delivery = value;}
         }
-        //constructor        
+
+        // GETTERS AND SETTERS     
         public string CompanyName {
             get => companyName;
             set => companyName = value;
         }
 
-        // getter list_order
         public List<Order> Order_list {
             get { return order_list; }
             set { order_list = value; }
@@ -48,13 +49,14 @@ namespace ProjetApplication
         public void addClient(Client c) {
             this.client_list.Add(c);
         }
-        
-        // getter treasury
+
         public float Treasury {
             get => treasury;
             set => treasury = value;
         }
-        // check the client list to see if the client is already in the list
+        
+        //FUNCTIONS
+        // Function that check if the client is in the list
         public bool isClientInList(string phone) {
             foreach(Client c in this.client_list) {
                 if(c.Phone == phone) {
@@ -64,6 +66,8 @@ namespace ProjetApplication
             }
             return false;
         }
+
+        // Function that return the client if he is in the list
         public Client getClient(string phone) {
             foreach(Client c in this.client_list) {
                 if(c.Phone == phone) {
@@ -72,7 +76,8 @@ namespace ProjetApplication
             }
             return null;
         }
-        // tostring client_list
+
+        // Function that print the client list
         public void printClientList() {
             foreach(Client c in client_list) {
                 c.printClient();
@@ -80,12 +85,12 @@ namespace ProjetApplication
             }
         }
 
-        // add order to the list of order
+        // Function that add Order to the list of order
         public void addOrder(Order o) {
             this.order_list.Add(o);
         }
 
-        // print order list
+        // Function that print list of order
         public void printOrderList() {
             if (order_list.Count == 0) {
                 Console.WriteLine("No order (fichier pizzeria)");
@@ -97,13 +102,16 @@ namespace ProjetApplication
             }
         }
 
+        // Function that add money to the treasury
         public void addToTreasury(float price) {
             this.treasury += price;
         }
 
+        // Function that print the treasury
         public void printTreasury() {
             Console.WriteLine("Treasury : " + treasury);
         }
+        
     }
 }
 

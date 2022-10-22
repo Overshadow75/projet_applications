@@ -4,12 +4,14 @@ namespace ProjetApplication
 {
     abstract class  Person
     {
+        // ATTRIBUTES
         protected int personID = 0;
         protected string name;
         protected string surname;
         protected int metierID = 0;
         
-        // constructor
+        // CONSTRUCTORS
+        // Constructor1 Person
         public Person(int personID, string name, string surname, int metierID) {
             this.personID = personID;
             this.name = name;
@@ -17,7 +19,10 @@ namespace ProjetApplication
             this.metierID = metierID;
         }
         
+        // Constructor2 Person
         public Person(){}
+        
+        //GETTERS AND SETTERS
         public string Name {
             get => name;
             set => name = value;
@@ -27,7 +32,6 @@ namespace ProjetApplication
             set => surname = value;
         }
         
-        // getter personID
         public int PersonID {
             get => personID;
             set => personID = value;

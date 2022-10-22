@@ -25,6 +25,7 @@ namespace ProjetApplication
             //set delivery_man to pizzeria
             pizzeria.Delivery_Man = new Delivery_man();            
 
+            // Run the Task
             Task t1 = Task.Run(() => pizzeria.Help_cooker.enterOrder(pizzeria));        
             await t1;
         }

@@ -4,6 +4,7 @@ namespace ProjetApplication
 {
     class Client : Person
     {
+        // ATTRIBUTES
         private string phone = "";
         private DateTime first_order;
 
@@ -15,7 +16,9 @@ namespace ProjetApplication
         private string country = "";
 
         public static int countPersonID = 0;
-        // constructor
+        
+        // CONSTRUCTORS
+        // Constructor1 Client
         public Client(int personID, string name, string surname, int metierID,string phone, DateTime first_order, int number, string streetName, string city, string zipCode, string country) :base(personID, name, surname, metierID){ 
             this.phone = phone;
             this.first_order = first_order;
@@ -25,6 +28,8 @@ namespace ProjetApplication
             this.zipCode = zipCode;
             this.country = country;
         }
+
+        // Constructor2 Client
          public Client() {
             this.personID = countPersonID++;
             Console.WriteLine("Person ID : " + personID);
@@ -49,7 +54,8 @@ namespace ProjetApplication
             Console.WriteLine("Enter address's informations: ");
             Console.WriteLine("Number : ");
             int number;
-            while (!int.TryParse(Console.ReadLine(), out number)) {
+            while (!int.TryParse(Console.ReadLine(), out number)) 
+            {
                 Console.WriteLine("Please enter a number");
             }
             this.number = number;
@@ -71,7 +77,38 @@ namespace ProjetApplication
             this.country = country;
         }
 
-        public void editAddress() { // in case of modification of the adress
+        // GETTERS AND SETTERS
+        public string Phone {
+            get => phone;
+            set => phone = value;
+        }
+
+        public string Address {
+            get => number + " " + streetName + " " + city + " " + zipCode + " " + country;
+        }
+
+        public DateTime First_order {
+            get => first_order;
+        }
+       
+       // Global getter for all the informations
+        public string AllInfo {
+            get => "Name : " + name + " Surname : " + surname + " Phone : " + phone + " First order : " + first_order + " Address : " + number + " " + streetName + " " + city + " " + zipCode + " " + country;
+        }
+
+        //FUNCTIONS
+        // Function to print the client
+        public void printClient(){
+            Console.WriteLine("CLIENT" + "\n" + "Person ID : " + this.personID + "\n" + "Name : " + this.name + "\n" + "Surname : " + this.surname + "\n" + "Metier ID : " + this.metierID + "\n" + "Phone : " + this.phone + "\n" + "First order : " + this.first_order);
+        }
+
+        // Function to print the address of a client
+        public void printAddress(){
+            Console.WriteLine("Address : " + this.number + " " + this.streetName + " " + this.city + " " + this.zipCode + " " + this.country);
+        }
+
+        // Function to edit the address
+        public void editAddress() {
             Console.WriteLine("Enter your address");
             Console.WriteLine("Street : ");
             this.streetName = Console.ReadLine();
@@ -84,35 +121,7 @@ namespace ProjetApplication
             
             Console.WriteLine("Country : ");
             this.country = Console.ReadLine();
-            
         }
-        public string Phone {
-            get => phone;
-            set => phone = value;
-        }
-
-        // getter address
-        public string Address {
-            get => number + " " + streetName + " " + city + " " + zipCode + " " + country;
-        }
-        // getter first_order
-        public DateTime First_order {
-            get => first_order;
-        }
-       
-       //global getter for all the informations
-        public string AllInfo {
-            get => "Name : " + name + " Surname : " + surname + " Phone : " + phone + " First order : " + first_order + " Address : " + number + " " + streetName + " " + city + " " + zipCode + " " + country;
-        }
-
-        public void printClient(){
-            Console.WriteLine("CLIENT" + "\n" + "Person ID : " + this.personID + "\n" + "Name : " + this.name + "\n" + "Surname : " + this.surname + "\n" + "Metier ID : " + this.metierID + "\n" + "Phone : " + this.phone + "\n" + "First order : " + this.first_order);
-        }
-
-        // Print the address of a client
-        public void printAddress(){
-            Console.WriteLine("Address : " + this.number + " " + this.streetName + " " + this.city + " " + this.zipCode + " " + this.country);
-        }
-
+        
     }    
 }

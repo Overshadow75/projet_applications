@@ -13,18 +13,18 @@
 /Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.pdb
 /Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/projet_applications.genruntimeconfig.cache
 /Users/nathan/Documents/GitHub/projet_applications/obj/Debug/net6.0/ref/projet_applications.dll
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/bin/Debug/net6.0/projet_applications.exe
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/bin/Debug/net6.0/projet_applications.deps.json
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/bin/Debug/net6.0/projet_applications.runtimeconfig.json
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/bin/Debug/net6.0/projet_applications.dll
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/bin/Debug/net6.0/projet_applications.pdb
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/projet_applications.csproj.AssemblyReference.cache
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/projet_applications.GeneratedMSBuildEditorConfig.editorconfig
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/projet_applications.AssemblyInfoInputs.cache
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/projet_applications.AssemblyInfo.cs
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/projet_applications.csproj.CoreCompileInputs.cache
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/projet_applications.dll
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/refint/projet_applications.dll
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/projet_applications.pdb
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/projet_applications.genruntimeconfig.cache
-C:/Users/sylmi/Documents/GitHub/M1 - Web Programmation/projet_applications/obj/Debug/net6.0/ref/projet_applications.dll
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\bin\Debug\net6.0\projet_applications.exe
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\bin\Debug\net6.0\projet_applications.deps.json
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\bin\Debug\net6.0\projet_applications.runtimeconfig.json
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\bin\Debug\net6.0\projet_applications.dll
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\bin\Debug\net6.0\projet_applications.pdb
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\projet_applications.csproj.AssemblyReference.cache
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\projet_applications.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\projet_applications.AssemblyInfoInputs.cache
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\projet_applications.AssemblyInfo.cs
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\projet_applications.csproj.CoreCompileInputs.cache
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\projet_applications.dll
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\refint\projet_applications.dll
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\projet_applications.pdb
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\projet_applications.genruntimeconfig.cache
+C:\Users\sylmi\Documents\GitHub\M1 - Web Programmation\projet_applications\obj\Debug\net6.0\ref\projet_applications.dll

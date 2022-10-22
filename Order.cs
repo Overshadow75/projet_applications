@@ -4,39 +4,26 @@ namespace ProjetApplication
 {
     class Order
     {
+        // ATTRIBUTES
         private Client c;
         public static int nOrders = 0;
         private int orderID = 0;
         private DateTime hours;
 
-        // order state (in_progress, in_delivery, delivered, finished, canceled)
+        // Order state (in_progress, in_delivery, delivered, finished, canceled)
         private order_type state = order_type.in_progress; // by default the order is in progress 
+        
+        // Creation of lists
         List<Pizza> pizza_list = new List<Pizza>(); // list of pizza
         List<Drink> drink_list = new List<Drink>(); // list of drink
-
-        // getter list_pizza
-        public List<Pizza> Pizza_list {
-            get { return pizza_list; }
-            set { pizza_list = value; }
-        }
-
-        // getter orderID
-        public int OrderID {
-            get => orderID;
-            set => orderID = value;
-        }
-
-        // getter state
-        public order_type State {
-            get => state;
-            set => state = value;
-        }
-        // enterOrder using the constructor
+        
+        // CONSTRUCTORS
+        // enterOrder() use the constructor
         public Order(Help_cooker h, Client c) { 
             this.c = c;            
             nOrders ++;
             this.orderID = nOrders;
-            Console.WriteLine("------------\nOrder n°" + orderID+"\n------------");
+            Console.WriteLine("------------\nOrder n°" + orderID +"\n------------");
            
             //Pizza choice
             int nb_pizzas;
@@ -80,7 +67,24 @@ namespace ProjetApplication
             res = (int)computePrice();
         }
 
-        // compute the price of the order
+        // GETTERS AND SETTERS
+        public List<Pizza> Pizza_list {
+            get { return pizza_list; }
+            set { pizza_list = value; }
+        }
+
+        public int OrderID {
+            get => orderID;
+            set => orderID = value;
+        }
+
+        public order_type State {
+            get => state;
+            set => state = value;
+        }
+
+        //FUNCTIONS
+        // Function that compute the total price of the Order
         public float computePrice() {
             float price = 0;
             foreach(Pizza pizza in pizza_list) {
@@ -93,7 +97,7 @@ namespace ProjetApplication
             return price;
         }
 
-        // display the order
+        // Function that display the Order
         public void displayOrder() {
             int i = 1;
             Console.WriteLine("Order ID : " + orderID);
@@ -107,12 +111,10 @@ namespace ProjetApplication
             if(drink_list.Count != 0) {
                 Console.WriteLine("Drinks ordered : ");
                 foreach(Drink d in drink_list) {
-                    Console.WriteLine("drink : " + d.drink_Type);
+                    Console.WriteLine("\tdrink : " + d.drink_Type);
                 }
             }
-
         }
 
     }
-
 }
