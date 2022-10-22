@@ -46,16 +46,17 @@ namespace ProjetApplication
             set { order_list = value; }
         }
 
-        public void addClient(Client c) {
-            this.client_list.Add(c);
-        }
-
         public float Treasury {
             get => treasury;
             set => treasury = value;
         }
         
         //FUNCTIONS
+        // Function to add a client to the client_list
+        public void addClient(Client c) {
+            this.client_list.Add(c);
+        }
+
         // Function that check if the client is in the list
         public bool isClientInList(string phone) {
             foreach(Client c in this.client_list) {
@@ -111,7 +112,7 @@ namespace ProjetApplication
         public void printTreasury() {
             Console.WriteLine("Treasury : " + treasury);
         }
-        
+
     }
 }
 
